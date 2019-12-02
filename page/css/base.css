@@ -1,0 +1,57 @@
+header {
+    background: #000;
+    /* width: 100; */
+    /* display: flex; */
+}
+header > .container {
+    /* background: yellow; */
+    width: 1140px;
+    height: 50px;
+    font-size: 18px;
+    margin: 0 auto;
+    line-height: 50px;
+    position: relative;
+    display: flex;
+}
+.container .title {
+    color: #ddd;
+    /* background: pink; */
+    margin-right: 36px;
+    font-weight: 500;
+}
+.container .nav {
+    font-size: 16px;
+    /* background: blue; */
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+}
+.container .nav li a {
+    /* float: left; */
+    color: #ddd;
+
+}
+.container .search {
+    /* background: pink; */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.container .search input {
+    width: 150px;
+    border-radius: 4px;
+    outline: none;
+    line-height: 30px;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 5px;
+}
+.container .search button {
+    width: 43px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+    color: #000;
+    outline: none;
+}
