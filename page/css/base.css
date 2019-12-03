@@ -1,57 +1,303 @@
-header {
-    background: #000;
-    /* width: 100; */
-    /* display: flex; */
+/* 通用样式------header区域/右侧/footer区域 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
 }
-header > .container {
-    /* background: yellow; */
+
+a {
+    color: #fff;
+}
+
+body {
+    background-image: url("../img/bg.jpg");
+    /* position: relative; */
+    text-align: left;
+}
+
+
+/* 头部 */
+
+.header {
+    width: 100%;
+    height: 50px;
+    background: #191818;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.container {
+    position: relative;
     width: 1140px;
     height: 50px;
-    font-size: 18px;
-    margin: 0 auto;
-    line-height: 50px;
-    position: relative;
-    display: flex;
-}
-.container .title {
-    color: #ddd;
+    margin: 0px auto;
     /* background: pink; */
-    margin-right: 36px;
-    font-weight: 500;
 }
-.container .nav {
-    font-size: 16px;
-    /* background: blue; */
-    display: flex;
-    justify-content: space-between;
-    width: 220px;
-}
-.container .nav li a {
-    /* float: left; */
-    color: #ddd;
 
+.title:hover {
+    color: rgb(158, 157, 157);
 }
-.container .search {
-    /* background: pink; */
+
+.title {
+    color: #eee;
+    /* height: 50px; */
+    line-height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+.menu {
+    /* background: blue; */
+    float: left;
+    line-height: 50px;
+}
+
+.menu>li {
+    float: left;
+    line-height: 50px;
+    margin: 0 10px;
+}
+
+.menu li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.menu li a:hover {
+    color: rgb(158, 157, 157);
+}
+
+.search_bar {
     position: absolute;
     right: 0;
-    top: 0;
+    line-height: 50px;
+    display: inline-block;
+    /* border: 1px solid red; */
+    font-size: 14px;
 }
-.container .search input {
+
+.search_bar input {
     width: 150px;
+    height: 30px;
     border-radius: 4px;
     outline: none;
-    line-height: 30px;
+    padding-left: 5px;
     font-size: 14px;
-    display: inline-block;
-    padding: 0 5px;
+    box-sizing: border-box;
 }
-.container .search button {
-    width: 43px;
-    font-size: 14px;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 3px;
-    color: #000;
+
+.search_bar button {
+    width: 54px;
     outline: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+
+/* 内容区 */
+
+.content {
+    /* box-sizing: border-box; */
+    overflow: hidden;
+    /* background: blue; */
+    /* border: 2px solid red; */
+    position: relative;
+    width: 1140px;
+    margin: 80px auto 0px;
+}
+
+@font-face {
+    font-family: "MyIcon";
+    src: url("../font/glyphicons-halflings-regular.woff2");
+}
+
+.content_left {
+    float: left;
+    /* background: yellow; */
+    opacity: 1;
+    width: 65%;
+    /* padding: 0px 20px 0px 0px; */
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.content_right {
+    width: 33%;
+    float: right;
+}
+
+
+/* 最近热门 */
+
+.right_moodule {
+    /* border: 1px solid #1f1f1f; */
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    background: #1f1f1f;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+.right_moodule ul>li a:hover,
+.right_moodule span a:hover,
+.right_moodule ul>li span .middle:hover {
+    color: #337ab7;
+}
+
+.right_moodule div {
+    /* display: block; */
+    width: 100%;
+    background: #191818;
+    color: #abcdea;
+    font-size: 14px;
+    padding: 15px;
+}
+
+
+/* 随机标签 */
+
+.right_moodule .tag_container {
+    word-wrap: break-word;
+    box-sizing: border-box;
+    padding: 15px;
+    display: block;
+}
+
+.right_moodule .tag_container a {
+    /* border: 1px solid red; */
+    display: inline-block;
+    font-size: 14px;
+    color: dodgerblue;
+    margin-right: 5px;
+}
+
+
+/* 最近热门 */
+
+.right_moodule>ul {
+    padding: 0px 15px 0 15px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.right_moodule>ul>li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* border: 1px solid red; */
+    padding: 8px 0px;
+    border-bottom: 1px solid #292929;
+    position: relative;
+}
+
+
+/* 最新评论 */
+
+.right_moodule>ul>li span dd.middle {
+    margin: 10px 0;
+    color: rgb(158, 157, 157);
+}
+
+.right_moodule>ul>li p {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+
+/* 友情提示 */
+
+.right_moodule>span {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    display: inline-block;
+    width: 49%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.right_moodule>span::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #292929;
+    width: 110%;
+}
+
+.right_moodule>span>a {
+    margin-left: 15px;
+    /* border: 1px solid red; */
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+
+/* 底部 */
+
+.footer {
+    width: 100%;
+    height: 60px;
+    background: #191818;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer ul>li {
+    /* border: 1px solid red; */
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    color: #a2a2a2;
+}
+
+.footer>p {
+    margin-top: 10px;
+    color: #a2a2a2;
+}
+
+
+/* 翻页部分 */
+
+.page_tool {
+    margin: 20px 0 20px;
+    display: inline-block;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #bfbfbf;
+    border-right: none;
+    /* background: white; */
+}
+
+.page_tool>ul>li {
+    font-size: 14px;
+    float: left;
+    line-height: 20px;
+    border-right: 1px solid #bfbfbf;
+    background: white;
+    padding: 5px 12px;
+    color: #000;
+    cursor: pointer;
+}
+
+.page_tool>ul>li.active {
+    background-color: #1f1f1f;
+    cursor: default;
+    color: #fff;
+}
+
+.page_tool>ul>li:hover:not(.active) {
+    /* background-color: #1f1f1f; */
+    background-color: gray;
+    /* color: #fff;
+    cursor: default; */
+}
+
+.now_page {
+    /* background: #333 !important; */
+    /* color: #fff !important; */
 }

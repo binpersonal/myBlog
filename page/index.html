@@ -3,74 +3,81 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>个人博客</title>
+    <title>首页|个人博客</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <a href="/" class="title">messenger的个人博客 | 技术博客</a>
-            <ul class="nav">
+            <a class="title">messenger的个人博客 | 技术博客</a>
+            <ul class="menu">
                 <li><a href="/">首页</a></li>
-                <li><a href="/">地图</a></li>
-                <li><a href="/">关于</a></li>
-                <li><a href="/">留言</a></li>
+                <li><a href="/sitemap.html">地图</a></li>
+                <li><a href="/about.html">关于</a></li>
+                <li><a href="/guestbook.html">留言</a></li>
             </ul>
-            <div class="search">
+            <div class="search_bar">
                 <input type="text" placeholder="请输入关键字">
                 <button>搜索</button>
             </div>
-        </div>Ï
+        </div>
     </header>
+
     <div class="content">
         <!-- 左边部分 -->
-        <div class="content-left">
+        <div class="content_left">
             <!-- 每日一句 -->
-            <div class="everyday">
-                <span>每日一句</span>
-                <p>犯我德邦者虽远必诛 -------赵信
-                </p>
+            <div class="every_day" id="every_day"><span>每日一句</span>
+                <p>犯我德邦者虽远必诛 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    -------赵信 </p>
             </div>
             <!-- 文章 -->
             <div class="article_list" id="article_list">
                 <!-- 文章内容 -->
                 <div class="article">
                     <a href="/" class="article_title">使用Nginx反向代理部署laravel和history模式的Vue项目</a>
-                    <p class="article_content">我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin
-                        来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
+                    <p class="article_content">
+                        我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin 来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
                     </p>
                     <div class="article_foot">发布于2019-11-30 | 浏览(125) | Tags：laravel nginx proxy vue</div>
                 </div>
                 <div class="article">
                     <a href="/" class="article_title">使用Nginx反向代理部署laravel和history模式的Vue项目</a>
-                    <p class="article_content">我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin
-                        来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
+                    <p class="article_content">
+                        我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin 来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
                     </p>
                     <div class="article_foot">发布于2019-11-30 | 浏览(125) | Tags：laravel nginx proxy vue</div>
                 </div>
                 <div class="article">
                     <a href="/" class="article_title">使用Nginx反向代理部署laravel和history模式的Vue项目</a>
-                    <p class="article_content">我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin
-                        来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
+                    <p class="article_content">
+                        我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin 来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
                     </p>
                     <div class="article_foot">发布于2019-11-30 | 浏览(125) | Tags：laravel nginx proxy vue</div>
                 </div>
                 <div class="article">
                     <a href="/" class="article_title">使用Nginx反向代理部署laravel和history模式的Vue项目</a>
-                    <p class="article_content">我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin
-                        来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
+                    <p class="article_content">
+                        我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin 来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
+                    </p>
+                    <div class="article_foot">发布于2019-11-30 | 浏览(125) | Tags：laravel nginx proxy vue</div>
+                </div>
+                <!-- <div class="article">
+                    <a href="/" class="article_title">使用Nginx反向代理部署laravel和history模式的Vue项目</a>
+                    <p class="article_content">
+                        我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin 来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
                     </p>
                     <div class="article_foot">发布于2019-11-30 | 浏览(125) | Tags：laravel nginx proxy vue</div>
                 </div>
                 <div class="article">
                     <a href="/" class="article_title">使用Nginx反向代理部署laravel和history模式的Vue项目</a>
-                    <p class="article_content">我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin
-                        来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
+                    <p class="article_content">
+                        我们以在我本地的开发环境为例，windows7+nginx+Vue+Laravel5，假设我想使用的域名是zh30.com。想达成的我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+我们以在我本地的开发环境为例，windows7+效果：我们想直接访问时使用Vue开发的单页面应用index.html，做为我们的前台交互，且在Vue中使用history路由模式。后台和接口使用laravel框架进行开发，所以想使用zh30.com/admin 来访问后台管理，接口交互想使用zh30.com/api/xxx。第一步，本地解析hosts，zh30.com指向到127.0kjbbkbk
                     </p>
                     <div class="article_foot">发布于2019-11-30 | 浏览(125) | Tags：laravel nginx proxy vue</div>
-                </div>
+                </div> -->
                 <!-- 翻页 -->
                 <div class="page_tool">
                     <ul>
@@ -79,25 +86,99 @@
                         <li class="now_page">3</li>
                         <li class="now_page">下一页</li>
                         <li class="now_page">最后</li>
-                        <li class="now_page">下一页</li>
-
                     </ul>
                 </div>
             </div>
         </div>
         <!-- 右边部分 -->
-        <div class="content-right">
+        <div class="content_right">
+            <!-- 随机标签 -->
             <div class="right_moodule" id="random_tags">
                 <div>随机标签云</div>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
-                <a href="/">pathy</a>
+                <container class="tag_container">
+                    <a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a>
+                    <a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a>
+                    <a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a>
+                    <a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a><a href="/">pathy</a>
+                    <a href="/">pathy</a>
+                </container>
+            </div>
+            <!--最近热门 -->
+            <div class="right_moodule" id="new_hot">
+                <div>最近热门
+                </div>
+                <ul>
+                    <li><a href="/"> 使用码云git的webh使用码云git的webhook实现生产环境代</a></li>
+                    <li><a href="/"> VirtualBox压缩vmdk、vagrant打包b</a></li>
+                    <li><a href="/"> ubuntu下cmake报错Could NOT fin</a></li>
+                    <li><a href="/"> 初烧盲狙一条铁三角e40</a></li>
+                    <li><a href="/"> 更新】PC端微信(2.6.7.57)防撤回</a></li>
+                </ul>
+            </div>
+            <!-- 最近热门 -->
+            <div class="right_moodule" id="new_comments">
+                <div>最新评论</div>
+                <ul>
+                    <li>
+                        <span>
+                            <dd>repostone</dd>
+                            <dd class="middle">非技术的路过。https: //rep</dd>
+                        </span>
+                        <p>[3天前]</p>
+                    </li>
+                    <li>
+                        <span>
+                            <dd>repostone</dd>
+                            <dd class="middle">非技术的路过。https: //rep</dd>
+                        </span>
+                        <p>[3天前]</p>
+                    </li>
+                    <li>
+                        <span>
+                            <dd>repostone</dd>
+                            <dd class="middle">非技术的路过。https: //rep</dd>
+                        </span>
+                        <p>[3天前]</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- 友情链接 -->
+            <div class="right_moodule">
+                <div>友情链接</div>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+                <span>
+                    <a href="/">挨踢茶馆</a>
+                </span>
+
             </div>
         </div>
     </div>
@@ -125,4 +206,4 @@
     </footer>
 </body>
 
-</html>
+</htm>
