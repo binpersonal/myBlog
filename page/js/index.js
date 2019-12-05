@@ -1,7 +1,7 @@
 var everyday = new Vue({
     el: "#every_day",
     data: {
-        content: '不以善小而不为，不以恶小而为之-----------刘备'
+        content: ''
     },
     computed: {
         randomcolor() {
@@ -17,5 +17,18 @@ var everyday = new Vue({
         getContent() {
             return this.content
         }
+    },
+    created () {
+        axios({
+            method: "get",
+            url: "/queryEveryDay"
+        }).then(function(res) {
+            // console.log(everyday)
+            everyday.content = res.data.data[0].content;
+            console.log(res.data.data[0].content);
+            console.log(res)
+        }).catch(function (resp) {
+            console.log("请求失败");
+        });
     }
 });
