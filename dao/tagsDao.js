@@ -31,4 +31,4 @@ function queryTag(tag,success) {
 }
 
 module.exports.insertTag = insertTag;
-module.exports.queryTag = queryTag  ;
+module.exports.queryTag = queryTag;

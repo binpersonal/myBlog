@@ -37,21 +37,17 @@
             <!-- 文章 -->
             <div class="article_list" id="article_list">
                 <!-- 文章内容 -->
-                <div class="article" v-for="article in articalList">
+                <div class="article" v-for="article in articleList">
                     <a href="/" class="article_title">{{article.title}}</a>
                     <p class="article_content">
                         {{article.content}}
                     </p>
-                    <div class="article_foot">发布于{{article.ctime}} | 浏览(125) | Tags：laravel nginx proxy vue</div>
+                    <div class="article_foot">发布于{{article.ctime}} |  浏览({{article.view}}) | Tags：{{article.tags}}</div>
                 </div>
                 <!-- 翻页 -->
                 <div class="page_tool">
                     <ul>
-                        <li class="now_page active">1</li>
-                        <li class="now_page">2</li>
-                        <li class="now_page">3</li>
-                        <li class="now_page">下一页</li>
-                        <li class="now_page">最后</li>
+                        <li v-on:click="jumpTo(pageNum.page)" v-bind:class="{now_page:(pageNum.text == page)}" v-for="pageNum in pageNumList">{{pageNum.text}}</li>
                     </ul>
                 </div>
             </div>
