@@ -20,4 +20,16 @@ path.set('/addComment',addComment)
 
 
 
+//验证码
+function queryRandomCode (request, response) {
+    var img = captcha.create({fontSize:50,width:100,height:34})
+    response.writeHead(200);
+    response.write(respUtil.writeResult("success", "评论成功", img));
+    response.end();
+}
+path.set('/queryRandomCode',queryRandomCode)
+
+
+
+
 module.exports.path = path;

@@ -17,6 +17,7 @@ app.get('/queryBlogById',loader.get('/queryBlogById'))   //详情页查询
 
 app.get('/addComment',loader.get('/addComment'))   //评论
 
+app.get('/queryRandomCode',loader.get('/queryRandomCode'))     //生成验证码接口
 
 
 
