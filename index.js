@@ -15,10 +15,11 @@ app.get('/queryBlogCount',loader.get('/queryBlogCount')); //总数翻页
 
 app.get('/queryBlogById',loader.get('/queryBlogById'))   //详情页查询
 
-app.get('/addComment',loader.get('/addComment'))   //评论
+app.get('/addComment',loader.get('/addComment'))   //添加评论
 
 app.get('/queryRandomCode',loader.get('/queryRandomCode'))     //生成验证码接口
 
+app.get('/queryCommentsByBlogId',loader.get('/queryCommentsByBlogId'))     //查询评论
 
 
 app.listen(globalConfig['port'], function() {

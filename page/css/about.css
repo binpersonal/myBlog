@@ -63,10 +63,12 @@
     padding: 10px 15px;
     box-shadow: 3px 4px 3px #888888;
     text-align: left;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
 .send_comment input {
+    outline: none;
     width: 300px;
     height: 34px;
     border: 1px solid #cccccc;
@@ -78,6 +80,7 @@
 }
 
 .send_comment textarea {
+    outline: none;
     width: 90%;
     height: 100px;
     border: 1px solid #cccccc;
@@ -89,6 +92,7 @@
 }
 
 .send_comment button {
+    outline: none;
     width: 100px;
     height: 30px;
     border: 1px solid #cccccc;

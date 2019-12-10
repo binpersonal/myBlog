@@ -133,3 +133,50 @@ var sendComment = new Vue({
     }
 
 });
+
+
+//留言部分
+var blogComments = new Vue({
+    el: '#blog_comments',
+    data: {
+        toatl:100,
+        comments:[
+            {id:' ',name:'',ctime:'',comments: ''},
+
+        ]
+    },
+    created () {
+        //对某一遍博客评论
+        var searcheUrlParams = location.search.indexOf("?") > -1 ? location.search.split("?")[1].split("&") : "";
+        var bid = -10;
+
+        for (var i = 0; i < searcheUrlParams.length; i++) {
+            if (searcheUrlParams[i].split("=")[0] == "bid") {
+                try {
+                    bid = parseInt(searcheUrlParams[i].split("=")[1]);
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+        }
+
+        axios({
+            method: "get",
+            url: "/queryCommentsByBlogId?bid=" + bid
+        }).then(function(resp) {
+            console.log(resp)
+            blogComments.comments = resp.data.data;
+            // for (var i = 0; i < blogComments.comments.length; i++) {
+            //     blogComments.comments[i] =
+            //         blogComments.comments[i].options = "回复@" + blogComments.comments[i].parent_name;
+            //
+            // }
+            // blogComments.comments = resp.data.data;
+            // for (var i = 0; i < blogComments.comments.length; i++) {
+            //     if (blogComments.comments[i].parent > -1) {
+            //         blogComments.comments[i].options = "回复@" + blogComments.comments[i].parent_name;
+            //     }
+            // }
+        });
+    }
+})

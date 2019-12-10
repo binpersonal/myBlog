@@ -18,6 +18,19 @@ function addComment(request, response) {
 }
 path.set('/addComment',addComment)
 
+//查询评论渲染页面接口
+function queryCommentsByBlogId(request, response) {
+    var params = url.parse(request.url, true).query;
+    commentDao.queryCommentsByBlogId(parseInt(params.bid), function(result) {
+        // console.log(result)
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "查询成功", result));
+        response.end();
+    })
+
+}
+path.set('/queryCommentsByBlogId',queryCommentsByBlogId )
+
 
 
 //验证码

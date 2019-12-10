@@ -1,5 +1,22 @@
 var dbutil = require ("./dbutil");
 
+//查询评论
+function queryCommentsByBlogId(blogId, success) {
+    var querySql = "select * from comments where blog_id = ?;";
+    var params = [blogId];
+    var connection = dbutil.createConnection();
+    connection.connect();
+    connection.query(querySql, params, function (error, result) {
+        if (error == null) {
+            success(result);
+        } else {
+            console.log(error);
+        }
+    });
+    connection.end();
+}
+
+
 //添加评论
 function insertComment(blogId, parent, userName, email, comments, ctime, utime, success) {
     var insertSql = "insert into comments (`blog_id`, `parent`, `userName`, `email`, `comments`, `ctime`, `utime`) values (?, ?, ?, ?, ?, ?, ?)";
@@ -19,5 +36,6 @@ function insertComment(blogId, parent, userName, email, comments, ctime, utime, 
 
 
 module.exports = {
-    'insertComment':insertComment
+    'insertComment':insertComment,
+    'queryCommentsByBlogId':queryCommentsByBlogId
 }
