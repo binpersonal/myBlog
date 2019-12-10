@@ -11,9 +11,11 @@ app.get('/queryEveryDay',loader.get('/queryEveryDay'));
 app.post('/editBlog',loader.get('/editBlog'));  //博客文章
 app.get('/queryBlogByPage',loader.get('/queryBlogByPage'));
 
-
 app.get('/queryBlogCount',loader.get('/queryBlogCount')); //总数翻页
 
+app.get('/queryBlogById',loader.get('/queryBlogById'))   //详情页查询
+
+app.get('/addComment',loader.get('/addComment'))   //评论
 
 
 

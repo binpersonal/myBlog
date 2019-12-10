@@ -7,6 +7,18 @@ var url = require("url");
 // console.log(tagBlogMappingDao,1)
 var path = new Map();
 
+
+//详情页查询
+function queryBlogById(request, response) {
+    var params = url.parse(request.url, true).query;
+    blogDao.queryBlogById(parseInt(params.bid),function (result) {
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "查询成功", result));
+        response.end();
+    })
+}
+path.set('/queryBlogById',queryBlogById)
+
 //翻页
 function queryBlogCount(request,response) {
     blogDao.queryBlogCount(function (result) {
@@ -17,6 +29,7 @@ function queryBlogCount(request,response) {
 }
 path.set("/queryBlogCount",queryBlogCount)
 
+
 //查询页
 function queryBlogByPage(request, response) {
     var params = url.parse(request.url,true).query;
@@ -24,8 +37,8 @@ function queryBlogByPage(request, response) {
         //过滤图片
         for (var i = 0 ; i < result.length ; i ++) {
             result[i].content = result[i].content.replace(/<img[\w\W]*">/, "");
-            // result[i].content = result[i].content.replace(/<[\w\W]{1,5}>/g, "");
-            // result[i].content = result[i].content.substring(0, 300);
+            result[i].content = result[i].content.replace(/<[\w\W]{1,5}>/g, "");
+            result[i].content = result[i].content.substring(0, 300);
         }
         response.writeHead(200);
         response.write(respUtil.writeResult("success", "查询成功", result));

@@ -17,6 +17,10 @@ function insertBlog(title, content, tags, view, ctime, utime, success) {
     connection.end();
 }
 
+
+
+
+
 //专用翻页总数
 function queryBlogCount (success) {
     var querySql = "select count(1) as count from blog;";
@@ -53,11 +57,28 @@ function queryBlogByPage (page, pageSize, success) {
 }
 
 
+//详情页查询
+function queryBlogById (id, success) {
+    var querySql = "select * from blog where id = ?;";
+    var params = [id];
+
+    var connection = dbutil.createConnection();
+    connection.connect();
+    connection.query(querySql, params, function (error, result) {
+        if (error == null) {
+            success(result);
+        } else {
+            console.log(error);
+        }
+    });
+    connection.end();
+}
 
 
 
 module.exports = {
     'insertBlog':insertBlog,
     'queryBlogByPage':queryBlogByPage,
-    'queryBlogCount': queryBlogCount
+    'queryBlogCount': queryBlogCount,
+    'queryBlogById':queryBlogById
 }

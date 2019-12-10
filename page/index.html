@@ -38,7 +38,7 @@
             <div class="article_list" id="article_list">
                 <!-- 文章内容 -->
                 <div class="article" v-for="article in articleList">
-                    <a href="/" class="article_title">{{article.title}}</a>
+                    <a :href="article.link" class="article_title">{{article.title}}</a>
                     <p class="article_content">
                         {{article.content}}
                     </p>
