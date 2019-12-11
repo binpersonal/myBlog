@@ -42,6 +42,17 @@ path.set('/queryBlogNewHot',queryBlogNewHot)
 
 
 
+//查询全部博客
+function queryAllBlog(request,response) {
+    blogDao.queryAllBlog(function (result) {
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "查询成功", result));
+        response.end();
+    })
+}
+path.set('/queryAllBlog',queryAllBlog)
+
+
 //查询页
 function queryBlogByPage(request, response) {
     var params = url.parse(request.url,true).query;

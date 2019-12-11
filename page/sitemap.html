@@ -8,6 +8,8 @@
     <title>站点地图|messenger的个人博客</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <link rel="stylesheet" href="./css/sitamap.css">
+    <script src="./js/axios.js"></script>
+
 </head>
 
 <body>
@@ -19,34 +21,10 @@
     <div class="blog_list" id="blog_list">
         <span>最新文章</span>
         <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
-        </ul>
-        <ul>
-            <li>
-                <a href="#">使用Nginx反向代理部署laravel和history模式的Vue项目[更新]</a> </li>
+            <li v-for="blog in blogLists"><a :href="blog.link">{{blog.title}}</a></li>
         </ul>
     </div>
+    <script src="./js/sitemap.js"></script>
 </body>
 
 </html>

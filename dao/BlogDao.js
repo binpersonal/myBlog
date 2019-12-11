@@ -93,11 +93,28 @@ function queryBlogNewHot (size, success) {
     connection.end();
 }
 
+//站点地图，查询全部博客
+function queryAllBlog(success) {
+    var querySql = "select * from blog order by id desc;";
+    var params = [];
+
+    var connection = dbutil.createConnection();
+    connection.connect();
+    connection.query(querySql, params, function (error, result) {
+        if (error == null) {
+            success(result);
+        } else {
+            console.log(error);
+        }
+    });
+    connection.end();
+}
 
 module.exports = {
     'insertBlog':insertBlog,
     'queryBlogByPage':queryBlogByPage,
     'queryBlogCount': queryBlogCount,
     'queryBlogById':queryBlogById,
-    'queryBlogNewHot':queryBlogNewHot
+    'queryBlogNewHot':queryBlogNewHot,
+    'queryAllBlog':queryAllBlog
 }

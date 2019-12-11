@@ -27,6 +27,8 @@ app.get('/queryRandomTags',loader.get('/queryRandomTags'))     //查询标签云
 
 app.get('/queryNewComments',loader.get('/queryNewComments'))     //查询最新评论
 
+app.get('/queryAllBlog',loader.get('/queryAllBlog'))     //查询全部博客站点地图
+
 
 
 
