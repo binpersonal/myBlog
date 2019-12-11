@@ -75,10 +75,10 @@
                 <ul>
                     <li v-for="component in newComponent">
                         <span>
-                            <dd>{{component.name}}</dd>
-                            <dd class="middle">{{component.content}}</dd>
+                           <dd>{{component.userName}}</dd>
+                            <dd class="middle">{{component.comments}}</dd>
                         </span>
-                        <p>[{{component.time}}天前]</p>
+                        <!--<p>[{{component.time}}天前]</p>-->
                     </li>
                 </ul>
             </div>
@@ -117,24 +117,11 @@
         </div>
     </div>
     <!-- 底部 -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <ul>
-            <li>C/C++</li>
-            <li>CSS/DIV</li>
-            <li>java</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
-            <li>C/C++</li>
+            <li v-for="item in footerList">
+                <a :href="item.path">{{item.tag}}</a>
+            </li>
         </ul>
         <p>Copyright © 2010-2017 洪山糖</p>
     </footer>

@@ -25,6 +25,10 @@ app.get('/queryBlogNewHot',loader.get('/queryBlogNewHot'))     //查询最新博
 
 app.get('/queryRandomTags',loader.get('/queryRandomTags'))     //查询标签云
 
+app.get('/queryNewComments',loader.get('/queryNewComments'))     //查询最新评论
+
+
+
 
 
 

@@ -7,6 +7,16 @@ var captcha = require("svg-captcha");   //引入验证码的工具
 
 
 
+//最新评论
+function queryNewComments(request, response) {
+    commentDao.queryNewComments(5, function (result) {
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "查询成功", result));
+        response.end();
+    })
+}
+path.set('/queryNewComments',queryNewComments)
+
 //评论
 function addComment(request, response) {
     var params = url.parse(request.url, true).query;

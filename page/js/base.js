@@ -47,7 +47,7 @@ var randomTags = new Vue({
 
         }
     })
-   // 最近热门
+ // 最近热门
 var newHot = new Vue({
         el: "#new_hot",
         data: {
@@ -83,42 +83,58 @@ var newHot = new Vue({
             this.getHotList();
     },
 })
-    // 最新评论
+ // 最新评论
 var newComments = new Vue({
     el: "#new_comments",
     data: {
-        newComponent: [{
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '1'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '1'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '5'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '3'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '2'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '1'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '1'
-        }, {
-            name: 'rep',
-            content: '受不了比方说乐山大佛流口水的能力斯柯达解放南路',
-            time: '1'
-        }]
+        newComponent: [
+        //     {
+        //     name: '',
+        //     content: '',
+        //     time: ''
+        // }
+        ]
+    },
+    created () {
+        axios({
+            methods:'get',
+            url:'/queryNewComments'
+        }).then(res => {
+            console.log(res,11110);
+            newComments.newComponent = res.data.data;
+            console.log( res.data.data,' res.data.data.comments')
+        })
+    }
+})
+
+ //底部
+var footer = new Vue({
+    el: '#footer',
+    data: {
+        footerList:[]
+    },
+    created() {
+        axios({
+            methods: 'get',
+            url: "/queryRandomTags"
+        }).then(res => {
+            console.log(res,"footer");
+            var tags = res.data.data;
+            var result = [];
+            for (var i in tags) {
+                var temp = {};
+                temp.tag = tags[i].tag;
+                temp.path = '/blog_details.html?bid=' +  tags[i].id;
+                result.push(temp);
+            }
+            footer.footerList = result;
+            console.log(footer.footerList,'111footer')
+
+        }).catch(res => {
+            console.log(res)
+        })
+    },
+    methods: {
+
     }
 })
