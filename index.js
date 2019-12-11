@@ -21,6 +21,12 @@ app.get('/queryRandomCode',loader.get('/queryRandomCode'))     //生成验证码
 
 app.get('/queryCommentsByBlogId',loader.get('/queryCommentsByBlogId'))     //查询评论
 
+app.get('/queryBlogNewHot',loader.get('/queryBlogNewHot'))     //查询最新博客
+
+app.get('/queryRandomTags',loader.get('/queryRandomTags'))     //查询标签云
+
+
+
 
 app.listen(globalConfig['port'], function() {
     console.log("服务器已启动")

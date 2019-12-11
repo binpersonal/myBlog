@@ -39,6 +39,7 @@ function queryBlogCount (success) {
 }
 
 
+
 //查询博客，翻页功能
 function queryBlogByPage (page, pageSize, success) {
     var insertSql = "select * from blog order by id desc limit ?, ?;";
@@ -75,10 +76,28 @@ function queryBlogById (id, success) {
 }
 
 
+//查询最新博客
+function queryBlogNewHot (size, success) {
+    var querySql = "select * from blog order by view desc limit ?;";
+    var params = [size];
+
+    var connection = dbutil.createConnection();
+    connection.connect();
+    connection.query(querySql, params, function (error, result) {
+        if (error == null) {
+            success(result);
+        } else {
+            console.log(error);
+        }
+    });
+    connection.end();
+}
+
 
 module.exports = {
     'insertBlog':insertBlog,
     'queryBlogByPage':queryBlogByPage,
     'queryBlogCount': queryBlogCount,
-    'queryBlogById':queryBlogById
+    'queryBlogById':queryBlogById,
+    'queryBlogNewHot':queryBlogNewHot
 }

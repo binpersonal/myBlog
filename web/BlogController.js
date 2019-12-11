@@ -30,6 +30,18 @@ function queryBlogCount(request,response) {
 path.set("/queryBlogCount",queryBlogCount)
 
 
+//查询最新博客
+function queryBlogNewHot(request,response) {
+    blogDao.queryBlogNewHot(5,function (result) {
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "查询成功", result));
+        response.end();
+    })
+}
+path.set('/queryBlogNewHot',queryBlogNewHot)
+
+
+
 //查询页
 function queryBlogByPage(request, response) {
     var params = url.parse(request.url,true).query;
@@ -102,6 +114,7 @@ function insertTagBlogMapping (tagId,blogId) {
 
     })
 }
+
 
 
 

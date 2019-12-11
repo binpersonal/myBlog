@@ -53,7 +53,6 @@ var sendComment = new Vue({
         rightCode: ""  //最后一次生成验证码的正确的值
     },
     computed: {
-
         changeCode: function() {
             return function() {
                 axios({
@@ -180,3 +179,5 @@ var blogComments = new Vue({
         });
     }
 })
+
+

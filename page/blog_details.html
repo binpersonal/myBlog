@@ -74,9 +74,9 @@
         <!-- 随机标签 -->
         <div class="right_moodule" id="random_tags">
             <div>随机标签云</div>
-            <container class="tag_container">
-                <a href="/" :style="{color:randomColor() ,fontSize:randomSize()}" v-for="tag in tags">{{tag}}</a>
-            </container>
+            <li class="tag_container">
+                <a :href="tag.path" :style="{color:randomColor() ,fontSize:randomSize()}" v-for="tag in tags">{{tag.tag}}</a>
+            </li>
         </div>
         <!--最近热门 -->
         <div class="right_moodule" id="new_hot">

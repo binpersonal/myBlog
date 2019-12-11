@@ -1,8 +1,8 @@
-// 随机标签
+ // 随机标签
 var randomTags = new Vue({
         el: '#random_tags',
         data: {
-            tags: ["payphone", "javascript", "css", "java", "html", "jquery", "vue", "javascript", "css", "java", "html", "jquery", "vue", "javascript", "css", "java", "html", "jquery", "vue", "javascript", "css", "java", "html", "jquery", "vue"]
+            tags: []
         },
         computed: {
             // 随机颜色
@@ -25,6 +25,25 @@ var randomTags = new Vue({
         },
 
         created() {
+            axios({
+                methods: 'get',
+                url: "/queryRandomTags"
+            }).then(res => {
+                console.log(res,21);
+                var tags = res.data.data;
+                var result = [];
+                for (var i in tags) {
+                    var temp = {};
+                    temp.tag = tags[i].tag;
+                    temp.path = '/blog_details.html?bid=' +  tags[i].id;
+                    result.push(temp);
+                }
+                randomTags.tags = result;
+                console.log(randomTags.tags,123)
+
+            }).catch(res => {
+                console.log(res)
+            })
 
         }
     })
@@ -32,46 +51,38 @@ var randomTags = new Vue({
 var newHot = new Vue({
         el: "#new_hot",
         data: {
-            hotList: [{
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                },
-                {
-                    path: '/',
-                    title: '使用码云git的webh使用码云git的webhook实现生产环境代'
-                }
-            ],
+            hotList: [],
+        },
+    computed: {
+        getHotList: function () {
+            return function () {
+                axios({
+                    methods: 'get',
+                    url: '/queryBlogNewHot',
+                }).then(res => {
+                    // console.log(res,1);
+                    var data = res.data.data
+                    var result = [];
 
+                    for (var i = 0; i < data.length; i++) {
+                        var temp = {};
+                        temp.title = data[i].title;
+                        temp.path = '/blog_details.html?bid=' +  data[i].id;
+                        result.push(temp);
+                    }
+                    newHot.hotList = result;
+                    // console.log(newHot.hotList,2)
+                }).catch(err => {
+                    console.log(err)
+                })
+            }
         }
-    })
+    },
+    created() {
+            console.log(this,12)
+            this.getHotList();
+    },
+})
     // 最新评论
 var newComments = new Vue({
     el: "#new_comments",

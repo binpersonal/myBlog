@@ -30,5 +30,23 @@ function queryTag(tag,success) {
     connection.end();
 }
 
-module.exports.insertTag = insertTag;
-module.exports.queryTag = queryTag;
+
+//查询随机标签云
+function queryAllTag(success) {
+    var querySql = "select * from tags ;";  // limit 1只取一个
+    var parmas = [];
+    var connection = dbutil.createConnection();
+    connection.connect();
+    connection.query(querySql,parmas,function (err, result) {
+        if (err == null) {
+            success(result)
+        } else {
+            console.log(err)
+        }
+    })
+    connection.end();
+}
+
+module.exports = {'insertTag':insertTag,
+    'queryTag':queryTag,
+    'queryAllTag':queryAllTag}
