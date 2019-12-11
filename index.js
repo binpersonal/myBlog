@@ -29,6 +29,11 @@ app.get('/queryNewComments',loader.get('/queryNewComments'))     //查询最新�
 
 app.get('/queryAllBlog',loader.get('/queryAllBlog'))     //查询全部博客站点地图
 
+app.get('/queryCommentsCountByBlogId',loader.get('/queryCommentsCountByBlogId'))     //查询全部博评论数
+
+app.get('/addComment',loader.get('/addComment'))     //查询全部博评论数
+
+
 
 
 

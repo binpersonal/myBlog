@@ -53,7 +53,6 @@ var sendComment = new Vue({
         rightCode: ""  //最后一次生成验证码的正确的值
     },
     computed: {
-
         changeCode: function() {
             return function() {
                 axios({
@@ -82,7 +81,7 @@ var sendComment = new Vue({
                     alert("验证码有误");
                     return;
                 }
-
+                    console.log(111212)
             //    对某遍文章进行评论
                 var searchUrlParams = location.search.indexOf("?") > -1 ? location.search.split("?")[1].split("&") : "";
                 if(searchUrlParams == "") {
@@ -139,11 +138,20 @@ var sendComment = new Vue({
 var blogComments = new Vue({
     el: '#blog_comments',
     data: {
-        toatl:100,
+        total:'',
         comments:[
-            {id:' ',name:'',ctime:'',comments: ''},
+            // {id:' ',name:'',ctime:'',comments: ''},
 
         ]
+    },
+    computed: {
+        reply: function() {
+            return function(commentId, userName) {
+                document.getElementById("comment_reply").value = commentId;
+                document.getElementById("comment_reply_name").value = userName;
+                location.href = "#send_comment";
+            }
+        }
     },
     created () {
         //对某一遍博客评论
@@ -159,24 +167,28 @@ var blogComments = new Vue({
                 }
             }
         }
-
         axios({
             method: "get",
             url: "/queryCommentsByBlogId?bid=" + bid
         }).then(function(resp) {
             console.log(resp)
             blogComments.comments = resp.data.data;
-            // for (var i = 0; i < blogComments.comments.length; i++) {
-            //     blogComments.comments[i] =
-            //         blogComments.comments[i].options = "回复@" + blogComments.comments[i].parent_name;
-            //
-            // }
-            // blogComments.comments = resp.data.data;
-            // for (var i = 0; i < blogComments.comments.length; i++) {
-            //     if (blogComments.comments[i].parent > -1) {
-            //         blogComments.comments[i].options = "回复@" + blogComments.comments[i].parent_name;
-            //     }
-            // }
+            for (var i = 0; i < blogComments.comments.length; i++) {
+                if (blogComments.comments[i].parent > -1) {
+                    blogComments.comments[i].options = "回复@" + blogComments.comments[i].parent_name;
+                }
+            }
+        });
+        //请求获取评论总数
+        axios({
+            method: "get",
+            url: "/queryCommentsCountByBlogId?bid=" + bid
+        }).then(function(resp) {
+            console.log(resp,12+'queryCommentCountByBlogId')
+            blogComments.total = resp.data.data[0].count;
+            console.log(blogComments.total,'total')
+        }).catch(function(resp) {
+            console.log("请求错误");
         });
     }
 })

@@ -41,34 +41,10 @@
                 <p style="color: red">不要皮，谢谢。</p>
             </div>
             <div class="blog_comments" id="blog_comments">
-                <span class="blog_comments_msg">当前文章：30 条留言</span>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
-                </div>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
-                </div>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
-                </div>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
-                </div>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
-                </div>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
-                </div>
-                <div class="blog_comment">
-                    <span><b>张无忌</b>：发表于 2019.10.11 <a style="cursor: pointer" v-on:click="reply(comment.id, comment.user_name)">[回复]</a></span>
-                    <div>丝黛芬妮索拉卡老师看电视了律师代理费三年</div>
+                <span class="blog_comments_msg">目前有：{{total}} 条留言</span>
+                <div class="blog_comment" v-for="comment in comments">
+                    <span><b>{{comment.userName}}</b>：{{comment.options}} 发表于 {{comment.ctime}} <a style="cursor: pointer" v-on:click="reply(comment.id, comment.userName)">[回复]</a></span>
+                    <div>{{comment.comments}}</div>
                 </div>
             </div>
 
@@ -90,24 +66,24 @@
                 <button v-on:click="sendComment()">提交评论</button>
             </div>
             <!-- 翻页 -->
-            <div class="page_tool">
-                <ul>
-                    <li class="now_page active">1</li>
-                    <li class="now_page">2</li>
-                    <li class="now_page">3</li>
-                    <li class="now_page">下一页</li>
-                    <li class="now_page">最后</li>
-                </ul>
-            </div>
+            <!--<div class="page_tool">-->
+                <!--<ul>-->
+                    <!--<li class="now_page active">1</li>-->
+                    <!--<li class="now_page">2</li>-->
+                    <!--<li class="now_page">3</li>-->
+                    <!--<li class="now_page">下一页</li>-->
+                    <!--<li class="now_page">最后</li>-->
+                <!--</ul>-->
+            <!--</div>-->
         </div>
         <!-- 右边部分 -->
         <div class="content_right">
             <!-- 随机标签 -->
             <div class="right_moodule" id="random_tags">
                 <div>随机标签云</div>
-                <container class="tag_container">
+                <div class="tag_container">
                     <a :href="tag.path" :style="{color:randomColor() ,fontSize:randomSize()}" v-for="tag in tags">{{tag.tag}}</a>
-                </container>
+                </div>
             </div>
             <!--最近热门 -->
             <div class="right_moodule" id="new_hot">
@@ -117,7 +93,6 @@
                     <li v-for="hot in hotList"><a :href=hot.path> {{hot.title}}</a></li>
                 </ul>
             </div>
-            <!-- 最近评论 -->
             <!-- 最新评论 -->
             <div class="right_moodule" id="new_comments">
                 <div>最新评论</div>
@@ -145,6 +120,7 @@
         </ul>
         <p>Copyright © 2010-2017 洪山糖</p>
     </footer>
+    <script src="./js/guestbook.js"></script>
     <script src="./js/base.js"></script>
 </body>
 

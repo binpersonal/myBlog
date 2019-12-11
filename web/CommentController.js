@@ -6,6 +6,32 @@ var path = new Map();
 var captcha = require("svg-captcha");   //引入验证码的工具
 
 
+//添加留言部分评论
+function addComment(request, response) {
+    var params = url.parse(request.url, true).query;
+
+    commentDao.insertComment(parseInt(params.bid), parseInt(params.parent), params.parentName, params.userName, params.email, params.content, timeUtil.getNow(), timeUtil.getNow(), function (result) {
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "评论成功", null));
+        response.end();
+    });
+}
+path.set("/addComment", addComment);
+
+
+
+
+//全部评论条数total
+function queryCommentsCountByBlogId(request, response) {
+    var params = url.parse(request.url, true).query;
+    commentDao.queryCommentCountByBlogId(parseInt(params.bid), function (result) {
+        response.writeHead(200);
+        response.write(respUtil.writeResult("success", "评论成功", result));
+        response.end();
+    });
+}
+path.set('/queryCommentsCountByBlogId',queryCommentsCountByBlogId)
+
 
 //最新评论
 function queryNewComments(request, response) {
@@ -20,7 +46,7 @@ path.set('/queryNewComments',queryNewComments)
 //评论
 function addComment(request, response) {
     var params = url.parse(request.url, true).query;
-    commentDao.insertComment(parseInt(params.bid), parseInt(params.parent), params.userName, params.email, params.content, timeUtil.getNow(), timeUtil.getNow(), function (result) {
+    commentDao.insertComment(parseInt(params.bid), parseInt(params.parent),params.parentName, params.userName, params.email, params.content, timeUtil.getNow(), timeUtil.getNow(), function (result) {
         response.writeHead(200);
         response.write(respUtil.writeResult("success", "查询成功", result));
         response.end();

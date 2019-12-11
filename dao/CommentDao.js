@@ -1,6 +1,24 @@
 var dbutil = require ("./dbutil");
 
 
+//查询全部评论
+function queryCommentCountByBlogId(blogId,success) {
+    var querySql = "select count(1) as count from comments where blog_id = ?;";
+    var params = [blogId];
+    var connection = dbutil.createConnection();
+    connection.connect();
+    connection.query(querySql, params, function (error, result) {
+        if (error == null) {
+            success(result);
+        } else {
+            console.log(error);
+        }
+    });
+    connection.end();
+}
+
+
+
 
 //查询最新评论
 function queryNewComments(size, success) {
@@ -38,9 +56,9 @@ function queryCommentsByBlogId(blogId, success) {
 
 
 //添加评论
-function insertComment(blogId, parent, userName, email, comments, ctime, utime, success) {
-    var insertSql = "insert into comments (`blog_id`, `parent`, `userName`, `email`, `comments`, `ctime`, `utime`) values (?, ?, ?, ?, ?, ?, ?)";
-    var params = [blogId, parent, userName, email, comments, ctime, utime];
+function insertComment(blogId, parent,parentName, userName, email, comments, ctime, utime, success) {
+    var insertSql = "insert into comments (`blog_id`, `parent`,`parentName`,`userName`, `email`, `comments`, `ctime`, `utime`) values (?, ?, ?, ?, ?, ?, ?,?)";
+    var params = [blogId, parent,parentName, userName, email, comments, ctime, utime];
 
     var connection = dbutil.createConnection();
     connection.connect();
@@ -58,5 +76,6 @@ function insertComment(blogId, parent, userName, email, comments, ctime, utime, 
 module.exports = {
     'insertComment':insertComment,
     'queryCommentsByBlogId':queryCommentsByBlogId,
-    'queryNewComments':queryNewComments
+    'queryNewComments':queryNewComments,
+    'queryCommentCountByBlogId':queryCommentCountByBlogId
 }
