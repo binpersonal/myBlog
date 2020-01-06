@@ -1,114 +1,8 @@
-/* 通用样式------header区域/右侧/footer区域 */
-
 * {
     margin: 0px;
     padding: 0px;
-    text-decoration: none;
     list-style: none;
-}
-:root {
-    border: 5px solid rebeccapurple;
-}
-
-a {
-    color: #fff;
-}
-
-body {
-    background-image: url("../img/bg.jpg");
-    text-align: left;
-}
-
-
-/* 头部 */
-
-.header {
-    width: 100%;
-    height: 50px;
-    background: #191818;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-}
-
-.container {
-    position: relative;
-    width: 1140px;
-    height: 50px;
-    margin: 0px auto;
-    /* background: pink; */
-}
-
-.title:hover {
-    color: rgb(158, 157, 157);
-}
-
-.title {
-    color: #eee;
-    /* height: 50px; */
-    line-height: 50px;
-    float: left;
-    margin-right: 10px;
-}
-
-.menu {
-    /* background: blue; */
-    float: left;
-    line-height: 50px;
-}
-
-.menu>li {
-    float: left;
-    line-height: 50px;
-    margin: 0 10px;
-}
-
-.menu li a {
-    font-size: 14px;
-    color: #fff;
-}
-
-.menu li a:hover {
-    color: rgb(158, 157, 157);
-}
-
-.search_bar {
-    position: absolute;
-    right: 0;
-    line-height: 50px;
-    display: inline-block;
-    /* border: 1px solid red; */
-    font-size: 14px;
-}
-
-.search_bar input {
-    width: 150px;
-    height: 30px;
-    border-radius: 4px;
-    outline: none;
-    padding-left: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-.search_bar button {
-    width: 54px;
-    outline: none;
-    height: 30px;
-    border-radius: 5px;
-}
-
-
-/* 内容区 */
-
-.content {
-    /* box-sizing: border-box; */
-    overflow: hidden;
-    /* background: blue; */
-    /* border: 2px solid red; */
-    position: relative;
-    width: 1140px;
-    margin: 80px auto 0px;
+    text-decoration: none;
 }
 
 @font-face {
@@ -116,207 +10,238 @@ body {
     src: url("../font/glyphicons-halflings-regular.woff2");
 }
 
+body {
+    background-image: url("../img/bg.jpg");
+    position: relative;
+    text-align: center;
+}
+a {
+    color: rgb(228, 226, 224);
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background: #191818;
+}
+
+.container {
+    position: relative;
+    width: 1170px;
+    height: 50px;
+    margin: 0px auto;
+    /* background: pink; */
+}
+
+.title {
+    display: inline-block;
+    float: left;
+    color: #eeeeee;
+    line-height: 50px;
+    text-decoration: none;
+    margin: 0px 15px;
+    font-size: 18px;
+}
+
+.menu {
+    /*background: blue;*/
+    float: left;
+}
+
+.menu>li {
+    display: inline-block;
+    float: left;
+    height: 50px;
+    width: 58px;
+    color: #eeeeee;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.menu>li>a {
+    text-decoration: none;
+    color: white;
+}
+
+.search_bar>input {
+    display: inline-block;
+    position: absolute;
+    height: 22px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid;
+    font-size: 14px;
+    top: 50%;
+    margin-top: -18px;
+    right: 60px;
+}
+
+.search_bar>button {
+    display: inline-block;
+    position: absolute;
+    width: 54px;
+    height: 34px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    top: 50%;
+    margin-top: -18px;
+    outline: none;
+    color: #555555;
+    right: 0px;
+    background: white;
+}
+
+.content {
+    display: inline-block;
+    position: relative;
+    width: 1170px;
+    margin: 30px auto 0px auto;
+
+}
+
 .content_left {
     float: left;
-    /* background: yellow; */
-    opacity: 1;
-    width: 65%;
-    /* padding: 0px 20px 0px 0px; */
-    padding-right: 10px;
+    width: 66%;
+    padding: 0px 20px 0px 0px;
     box-sizing: border-box;
 }
 
 .content_right {
-    width: 33%;
     float: right;
+    width: 34%;
+    padding: 0px 0px 0px 0px;
 }
 
-
-/* 最近热门 */
-
 .right_moodule {
-    /* border: 1px solid #1f1f1f; */
     box-sizing: border-box;
-    overflow: hidden;
+    display: inline-block;
     width: 100%;
     background: #1f1f1f;
-    border-radius: 7px;
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    padding: 0px 15px 25px 15px;
     margin-bottom: 20px;
 }
 
-.right_moodule ul>li a:hover,
-.right_moodule span a:hover,
-.right_moodule ul>li span .middle:hover {
-    color: #337ab7;
-}
-
 .right_moodule div {
-    /* display: block; */
-    width: 100%;
-    background: #191818;
-    color: #abcdea;
-    font-size: 14px;
-    padding: 15px;
-}
-
-
-/* 随机标签 */
-
-.right_moodule .tag_container {
-    word-wrap: break-word;
-    box-sizing: border-box;
-    padding: 15px;
     display: block;
+    text-align: left;
+    font-size: 14px;
+    padding: 15px 5px 15px 0px;
+    color: dodgerblue;
 }
 
-.right_moodule .tag_container a {
-    /* border: 1px solid red; */
+.right_moodule>a {
     display: inline-block;
     font-size: 14px;
     color: dodgerblue;
     margin-right: 5px;
-}
-
-
-/* 最近热门 */
-
-.right_moodule>ul {
-    padding: 0px 15px 0 15px;
-    color: #fff;
-    font-size: 14px;
+    text-decoration: none;
 }
 
 .right_moodule>ul>li {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    /* border: 1px solid red; */
+    list-style: none;
+    color: white;
     padding: 8px 0px;
-    border-bottom: 1px solid #292929;
-    position: relative;
+    border-bottom: 1px solid #5e5c5c;
 }
 
-
-/* 最新评论 */
-
-.right_moodule>ul>li span dd.middle {
-    margin: 10px 0;
-    color: rgb(158, 157, 157);
+.right_moodule>ul>li>a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
 }
 
-.right_moodule>ul>li p {
+.right_moodule>ul>li>div {
+    padding: 5px 0px;
+}
+
+.right_moodule>ul>li>div>span {
+    font-size: 14px;
+    color: white;
+}
+
+.right_moodule>ul>li>p {
+    font-size: 14px;
+    color: #777777;
+}
+
+.pull_right {
     position: absolute;
-    right: 0;
-    top: 15px;
+    right: 15px;
 }
-
-
-/* 友情提示 */
 
 .right_moodule>span {
-    /* border: 1px solid red; */
-    box-sizing: border-box;
     display: inline-block;
-    width: 49%;
+    width: 50%;
     height: 30px;
     margin-top: 10px;
 }
 
-.right_moodule>span::after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid #292929;
-    width: 110%;
-}
-
 .right_moodule>span>a {
-    margin-left: 15px;
-    /* border: 1px solid red; */
     text-decoration: none;
     color: white;
     font-size: 14px;
     line-height: 30px;
 }
 
-
-/* 底部 */
-
 .footer {
-    position: absolute;
-    width: 100vw;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
     background: #191818;
     text-align: center;
-    /* bottom: 0; */
-    /* padding-top: 20px; */
+    /* padding: 20px; */
 }
 
-/* .footer ul {
-    width: 93%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-} */
-
-/* .footer ul li {
-    overflow: hidden;
-    line-height: 30px;
-    width: 110px;
+.footer>ul {
     display: inline-block;
     margin: 0px auto;
     text-align: center;
 }
-.footer ul li a {
+
+.footer>ul>li {
+    display: inline-block;
     color: #a2a2a2;
-}
-.footer ul li:hover a {
-    color: #337ab7;
-}
-*/
-.footer>p {
-    color: #a2a2a2;
-    margin: 8px auto;
-} 
-.footer p span {
-    color: #ddd;
+    float: left;
+    font-size: 14px;
+    margin-left: 10px;
+    cursor: pointer;
+    text-align: center;
 }
 
-/* 翻页部分 */
+.footer>p {
+    margin-top: 10px;
+    color: #a2a2a2;
+}
 
 .page_tool {
-    margin: 20px 0 20px;
+    margin-top: 20px;
     display: inline-block;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid #bfbfbf;
-    border-right: none;
-    /* background: white; */
 }
 
 .page_tool>ul>li {
-    font-size: 14px;
-    float: left;
-    line-height: 20px;
-    border-right: 1px solid #bfbfbf;
+    display: inline-block;
+    list-style: none;
+    width: 40px;
+    height: 30px;
+    background: pink;
+    line-height: 30px;
     background: white;
-    padding: 5px 12px;
-    color: #000;
+    text-align: center;
+    border: 1px solid black;
+    float: left;
     cursor: pointer;
 }
 
-.page_tool>ul>li.active {
-    background-color: #1f1f1f;
-    cursor: default;
-    color: #fff;
-}
-
-.page_tool>ul>li:hover:not(.active) {
-    /* background-color: #1f1f1f; */
-    background-color: gray;
-    /* color: #fff;
-    cursor: default; */
+.page_tool>ul>li:hover {
+    background: gray;
 }
 
 .now_page {
-     background: #333 !important;
-     color: #fff !important;
+    background: #333 !important;
+    color: #fff !important;
 }

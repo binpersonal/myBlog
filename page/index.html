@@ -57,9 +57,9 @@
             <!-- 随机标签 -->
             <div class="right_moodule" id="random_tags">
                 <div>随机标签云</div>
-                <li class="tag_container">
+                <!-- <div class="tag_container"> -->
                     <a :href="tag.path" :style="{color:randomColor() ,fontSize:randomSize()}" v-for="tag in tags">{{tag.tag}}</a>
-                </li>
+                <!-- </div> -->
             </div>
             <!--最近热门 -->
             <div class="right_moodule" id="new_hot">
@@ -74,45 +74,22 @@
                 <div>最新评论</div>
                 <ul>
                     <li v-for="component in newComponent">
-                        <span>
-                           <dd>{{component.userName}}</dd>
-                            <dd class="middle">{{component.comments}}</dd>
-                        </span>
-                        <!--<p>[{{component.time}}天前]</p>-->
+                        <div>
+                           <span>{{component.userName}}</span>
+                            <span class="pull_right">{{component.comments}}</span>
+                        </div>
+                        <p>[{{component.time}}天前]</p>
                     </li>
                 </ul>
             </div>
             <!-- 友情链接 -->
-            <div class="right_moodule" id="">
+            <div class="right_moodule">
                 <div>友情链接</div>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-                <span>
-                    <a href="/">挨踢茶馆</a>
-                </span>
-
+                <span><a href="/">挨踢茶馆</a></span><span><a href="/">挨踢茶馆</a></span>
+                <span><a href="/">挨踢茶馆</a></span><span><a href="/">挨踢茶馆</a></span>
+                <span><a href="/">挨踢茶馆</a></span><span><a href="/">挨踢茶馆</a></span>
+                <span><a href="/">挨踢茶馆</a></span><span><a href="/">挨踢茶馆</a></span>
+                <span><a href="/">挨踢茶馆</a></span><span><a href="/">挨踢茶馆</a></span>
             </div>
         </div>
     </div>
